@@ -6,22 +6,28 @@
     <title>MOE HR System - Human Resource Management System</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇸🇱</text></svg>">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <span class="logo-icon">🏢</span>
+                <span style="font-size: 35px; line-height: 1; display: flex; align-items: center;">🇸🇱</span>
                 <span class="logo-text">MOE HR</span>
                 <span class="logo-badge">System</span>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#modules">Modules</a></li>
                 <li><a href="#benefits">Benefits</a></li>
                 <li><a href="#contact" class="btn-nav">Get Started</a></li>
             </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -134,54 +140,18 @@
                 <p>Every module you need for modern HR management</p>
             </div>
             <div class="modules-grid">
-                <div class="module-item">
-                    <span>📊</span>
-                    <span>Dashboard</span>
-                </div>
-                <div class="module-item">
-                    <span>👥</span>
-                    <span>Employees</span>
-                </div>
-                <div class="module-item">
-                    <span>🏖️</span>
-                    <span>Leave</span>
-                </div>
-                <div class="module-item">
-                    <span>📋</span>
-                    <span>IPAS</span>
-                </div>
-                <div class="module-item">
-                    <span>📈</span>
-                    <span>Reports</span>
-                </div>
-                <div class="module-item">
-                    <span>🎯</span>
-                    <span>Recruitment</span>
-                </div>
-                <div class="module-item">
-                    <span>🎂</span>
-                    <span>Retirement</span>
-                </div>
-                <div class="module-item">
-                    <span>⏰</span>
-                    <span>Attendance</span>
-                </div>
-                <div class="module-item">
-                    <span>💾</span>
-                    <span>Backup</span>
-                </div>
-                <div class="module-item">
-                    <span>🗄️</span>
-                    <span>Database</span>
-                </div>
-                <div class="module-item">
-                    <span>⚙️</span>
-                    <span>Settings</span>
-                </div>
-                <div class="module-item">
-                    <span>🔄</span>
-                    <span>Updates</span>
-                </div>
+                <div class="module-item"><span>📊</span><span>Dashboard</span></div>
+                <div class="module-item"><span>👥</span><span>Employees</span></div>
+                <div class="module-item"><span>🏖️</span><span>Leave</span></div>
+                <div class="module-item"><span>📋</span><span>IPAS</span></div>
+                <div class="module-item"><span>📈</span><span>Reports</span></div>
+                <div class="module-item"><span>🎯</span><span>Recruitment</span></div>
+                <div class="module-item"><span>🎂</span><span>Retirement</span></div>
+                <div class="module-item"><span>⏰</span><span>Attendance</span></div>
+                <div class="module-item"><span>💾</span><span>Backup</span></div>
+                <div class="module-item"><span>🗄️</span><span>Database</span></div>
+                <div class="module-item"><span>⚙️</span><span>Settings</span></div>
+                <div class="module-item"><span>🔄</span><span>Updates</span></div>
             </div>
         </div>
     </section>
@@ -271,5 +241,23 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
