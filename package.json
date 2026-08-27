@@ -1,0 +1,11 @@
+{
+    "name": "moe-hr-landing",
+    "version": "1.0.0",
+    "description": "MOE HR System Landing Page",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "author": "MOE HR System",
+    "license": "MIT"
+}
